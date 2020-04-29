@@ -48,12 +48,257 @@ table {
 	border-spacing: 0;
 }
 
-/* Set every element's box-sizing to border-box */
+/* RESETS *////////////
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	max-width: 100%;
+	font-size: 62.5%;
 }
 
 html, body {
+	width: 100%;
     height: 100%;
 }
 
+// VARIABLES ///////////////////////////////
+@mainColor: rgb(214, 205, 205);
+@secondaryColor: rgb(235,58,69);
+@mainFont: "Montserrat";
+
+// SIDEBAR ///////////
+.main-container {
+	width: 100%;
+	height: 100%;
+	display: flex;
+}
+	.sidebar-container {
+		display: flex;
+		flex-direction: column;
+		width: 20%;
+		height: 100%;
+		position: relative;
+		filter: drop-shadow(0 1px 7px rgb(0, 0, 0));
+		z-index: 100;
+	}
+		.sidebar {
+			display: flex;
+			flex-direction: column;
+			align-items: flex-start;
+			background-color: @mainColor;
+			flex-grow: 1;
+
+		}
+			.portrait {
+				margin: 12.5% 0;
+				border-radius: 100%;
+				width: 70%;
+				align-self: center;
+			}
+
+			.nav {
+				width: 100%;
+			}
+				.nav-links {
+					font-family: @mainFont;
+					font-size: 1.3rem;
+					padding: 10%;
+					text-align: center;
+					color: rgb(117, 116, 116);
+
+						&:hover {
+							color: @secondaryColor;
+							background-color: rgba(255, 245, 245, 0.856);
+						}
+				}
+
+					a {
+						text-decoration: none;
+					}
+
+// HEADER ///////////
+.content{
+	display: flex;
+	flex-direction: column;
+	width: 80%;
+	height: 100%;
+	position: relative;
+	// z-index: 0;
+	background-color: @mainColor;
+}
+	.header {
+		display: flex;
+		position: relative;
+		width: 100%;
+		height: 40%;
+		background-color: @secondaryColor;
+		filter: drop-shadow(3px 0 3px rgba(0, 0, 0, 0.719));
+		z-index: 500;
+
+	}
+		.header-content {
+			display: flex;
+			flex-wrap: wrap;
+			flex: 1;
+			justify-content: center;
+			padding: 5%;
+
+		}
+			h1 {
+				text-align: center;
+				color: white;
+				font-family: @mainFont;
+				font-weight: 900;
+				font-size: 5rem;
+				width: 100%;
+				align-self: center;
+			}
+			h2 {
+				text-align: center;
+				color: rgb(236, 231, 231);
+				font-family: @mainFont;
+				width: 100%;
+				padding: 1%;
+				font-size: 1.2rem;
+				align-self: top;
+			}
+
+	// BOTTOM ///////////////
+
+	.bottom {
+		width: 100%;
+		height: 60%;
+		background-color: @mainColor;
+		padding: 5% 5% 0;
+		margin-left: 1%;
+		// overflow-x: hidden;
+		z-index: 0;
+		overflow-y: scroll;
+		
+
+	}
+		.bottom-content {	
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
+			flex-direction: column;
+
+		}
+
+			.pd {
+				padding: 7%;
+			}
+			.bot-heading {
+				color: rgb(95, 94, 94);
+				font-family: "Playfair Display";
+				font-size: 2.2rem;
+				font-weight: 700;
+				width: 100%;
+			}
+			.bot-small-heading{
+				color: @secondaryColor;
+				font-family: "Montserrat";
+				font-size: 2.5rem;
+				font-weight: 900;
+				width: 100%;
+			}
+			.main-text {
+				color: black;
+				font-family: "Playfair Display";
+				font-size: 1.5rem;
+				font-weight: 400;
+			}
+			.bot-img-container {
+				width: 100%;
+				padding: 4%;
+				display: flex;
+				justify-content: center;
+			}
+				.lambda {
+					align-self: center;
+				}
+			.arrow-container{
+				// padding: 2%;
+				display: flex;
+				justify-content: center;
+			}
+				.fa-angle-double-down{
+					font-size: 2rem;
+					color: @secondaryColor;
+				}
+			.language-container {
+				display: flex;
+				justify-content: center;
+				padding: 0 1% 5%;
+			}
+				.language-logo {
+					width: 17%;
+					align-self: center;
+				}
+				.js {
+					width: 15%;
+				}
+			.main-skills-container{
+				display: flex;
+				justify-content: center;
+			}
+				.skills-list {
+					display: flex;
+					// flex-wrap: wrap;
+					width: 70%;
+					justify-content: center;
+					
+				}
+					.skill-container{
+						// width: 70%;
+					}
+						.skills {
+							list-style: inside;
+							text-align: start;
+							line-height: 1.5;
+							color: rgb(126, 121, 121);
+						}
+					.r {
+						margin-left: 30%;
+					}
+		
+			.portfolio {
+				z-index: 0;
+				
+			}
+				.port-img-container{
+					background-image: url(../images/bg.jpg);
+					background-size: cover;
+					background-repeat: no-repeat;
+					background-position-y: 62.8%;
+						
+				}
+					.port-nav {
+						display: flex;
+						justify-content: center;
+						backdrop-filter: blur(2px);						
+					}
+						.portfolio-img{
+							width: 50%;
+							opacity: 40%;
+							border-radius: 80%;
+
+								
+						}
+
+			.footer {
+				display: flex;
+				justify-content: center;
+				padding: 5% 0 0;
+				z-index: 0;
+
+			}
+				.footer-container {
+					text-align: center;
+					width: 100%;
+				}
+					.f-text {
+						padding: 1%;
+						color: rgb(114, 113, 113);
+					}
